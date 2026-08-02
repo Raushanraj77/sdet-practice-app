@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SDET Practice Application</title>
+
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+
+    <div id="login-page" class="page">
+
+        <div class="login-card">
+
+            <h1>SDET Practice Application</h1>
+
+            <h2>Login</h2>
+
+            <form id="login-form">
+
+                <label for="login-email">
+                    Email
+                </label>
+
+                <input id="login-email" type="email" required>
+
+                <label for="login-password">
+                    Password
+                </label>
+
+                <input id="login-password" type="password" required>
+
+                <button type="submit" class="primary-btn">
+                    Login
+                </button>
+
+            </form>
+
+            <div id="login-error" class="message error"></div>
+
+        </div>
+
+    </div>
+
+
+    <div id="dashboard-page" class="page hidden">
+
+        <header class="header">
+
+            <div>
+
+                <h1>SDET Practice Application</h1>
+
+                <p>User Management Dashboard</p>
+
+            </div>
+
+            <div class="user-info">
+
+                <span id="current-user"></span>
+
+                <button id="logout-btn" class="secondary-btn">
+                    Logout
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <main class="container">
+
+            <section class="card">
+
+                <div class="section-header">
+
+                    <h2>Users</h2>
+
+                    <button id="create-user-btn" class="primary-btn">
+                        + Create User
+                    </button>
+
+                </div>
+
+                <div id="message" class="message"></div>
+
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="users-body">
+                    </tbody>
+
+                </table>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <div id="user-modal" class="modal hidden">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h2 id="modal-title">
+                    Create User
+                </h2>
+
+                <button id="close-modal" class="close-btn">
+                    ×
+                </button>
+
+            </div>
+
+
+            <form id="user-form">
+
+                <input type="hidden" id="user-id">
+
+                <label for="name">
+                    Name
+                </label>
+
+                <input type="text" id="name" required>
+
+                <label for="email">
+                    Email
+                </label>
+
+                <input type="email" id="email" required>
+
+                <div class="form-actions">
+
+                    <button type="button" id="cancel-btn" class="secondary-btn">
+                        Cancel
+                    </button>
+
+                    <button type="submit" class="primary-btn">
+                        Save User
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="/static/js/users.js"></script>
+
+</body>
+
+</html>
