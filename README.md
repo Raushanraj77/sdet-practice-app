@@ -12,6 +12,18 @@ so that a complete automation framework can be built around a realistic applicat
 
 ---
 
+## 🔐 Demo Access
+
+The SDET Practice App provides dedicated demo accounts
+for the QA community.
+
+| Role | Username | Password |
+|------|----------|----------|
+| Admin | Admin@test.com | Admin@123 |
+
+These accounts are intended only for testing and automation practice.
+Do not use them for production or sensitive data.
+
 ## ✨ What Are We Building?
 
 This project is more than a demo application.
