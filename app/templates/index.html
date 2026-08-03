@@ -13,6 +13,10 @@
 
 <body>
 
+    <!-- =====================================================
+         LOGIN PAGE
+    ====================================================== -->
+
     <div id="login-page" class="page">
 
         <div class="login-card">
@@ -27,13 +31,13 @@
                     Email
                 </label>
 
-                <input id="login-email" type="email" required>
+                <input id="login-email" type="email" autocomplete="username" required>
 
                 <label for="login-password">
                     Password
                 </label>
 
-                <input id="login-password" type="password" required>
+                <input id="login-password" type="password" autocomplete="current-password" required>
 
                 <button type="submit" class="primary-btn">
                     Login
@@ -47,6 +51,10 @@
 
     </div>
 
+
+    <!-- =====================================================
+         DASHBOARD PAGE
+    ====================================================== -->
 
     <div id="dashboard-page" class="page hidden">
 
@@ -64,7 +72,7 @@
 
                 <span id="current-user"></span>
 
-                <button id="logout-btn" class="secondary-btn">
+                <button id="logout-btn" class="secondary-btn" type="button">
                     Logout
                 </button>
 
@@ -81,33 +89,40 @@
 
                     <h2>Users</h2>
 
-                    <button id="create-user-btn" class="primary-btn">
+                    <button id="create-user-btn" class="primary-btn" type="button">
                         + Create User
                     </button>
 
                 </div>
 
+
                 <div id="message" class="message"></div>
 
 
-                <table>
+                <!-- Users Table -->
 
-                    <thead>
+                <div class="table-container">
 
-                        <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Status</th>
-                            <th>Actions</th>
-                        </tr>
+                    <table>
 
-                    </thead>
+                        <thead>
 
-                    <tbody id="users-body">
-                    </tbody>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
 
-                </table>
+                        </thead>
+
+                        <tbody id="users-body">
+                        </tbody>
+
+                    </table>
+
+                </div>
 
             </section>
 
@@ -116,9 +131,15 @@
     </div>
 
 
+    <!-- =====================================================
+         CREATE / EDIT USER MODAL
+    ====================================================== -->
+
     <div id="user-modal" class="modal hidden">
 
         <div class="modal-content">
+
+            <!-- Modal Header -->
 
             <div class="modal-header">
 
@@ -126,32 +147,87 @@
                     Create User
                 </h2>
 
-                <button id="close-modal" class="close-btn">
+                <button id="close-modal" class="close-btn" type="button" aria-label="Close">
                     ×
                 </button>
 
             </div>
 
 
+            <!-- User Form -->
+
             <form id="user-form">
+
+                <!-- Hidden ID
+                     Empty = Create
+                     Populated = Edit
+                -->
 
                 <input type="hidden" id="user-id">
 
-                <label for="name">
-                    Name
-                </label>
 
-                <input type="text" id="name" required>
+                <!-- Name -->
 
-                <label for="email">
-                    Email
-                </label>
+                <div class="form-group">
 
-                <input type="email" id="email" required>
+                    <label for="name">
+                        Name
+                    </label>
 
-                <div class="form-actions">
+                    <input type="text" id="name" name="name" maxlength="100" required>
 
-                    <button type="button" id="cancel-btn" class="secondary-btn">
+                </div>
+
+
+                <!-- Email -->
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email
+                    </label>
+
+                    <input type="email" id="email" name="email" maxlength="255" required>
+
+                </div>
+
+
+                <!-- Password -->
+
+                <div id="password-group" class="form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <input type="password" id="password" name="password" minlength="8" autocomplete="new-password">
+
+                    <small>
+                        Password must contain at least 8 characters.
+                    </small>
+
+                </div>
+
+
+                <!-- Confirm Password -->
+
+                <div id="confirm-password-group" class="form-group">
+
+                    <label for="confirm-password">
+                        Confirm Password
+                    </label>
+
+                    <input type="password" id="confirm-password" name="confirm-password" minlength="8"
+                        autocomplete="new-password">
+
+                </div>
+
+
+                <!-- Form Actions -->
+
+                <div class="modal-actions">
+
+                    <button id="cancel-btn" type="button" class="secondary-btn">
                         Cancel
                     </button>
 
@@ -168,8 +244,13 @@
     </div>
 
 
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
     <script src="/static/js/users.js"></script>
 
 </body>
 
 </html>
+```

@@ -26,23 +26,21 @@ class User(Base):
         index=True,
     )
 
-    password_hash: Mapped[str | None] = mapped_column(
+    password_hash: Mapped[str] = mapped_column(
         String(255),
-        nullable=True,
-    )
-
-    role: Mapped[str] = mapped_column(
-        String(20),
         nullable=False,
-        default="USER",
-        server_default="USER",
     )
 
     status: Mapped[str] = mapped_column(
         String(20),
         nullable=False,
         default="ACTIVE",
-        server_default="ACTIVE",
+    )
+
+    role: Mapped[str] = mapped_column(
+        String(20),
+        nullable=False,
+        default="USER",
     )
 
     created_at: Mapped[datetime] = mapped_column(

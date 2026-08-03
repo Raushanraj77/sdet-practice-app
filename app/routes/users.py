@@ -33,7 +33,7 @@ def create_user(
 
     if existing_user:
         raise HTTPException(
-            status_code=status.HTTP_409_CONFLICT,
+            status_code=409,
             detail="User with this email already exists",
         )
 
@@ -104,7 +104,7 @@ def update_user(
 
     if user is None:
         raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
+            status_code=404,
             detail="User not found",
         )
 
@@ -117,7 +117,7 @@ def update_user(
 
     if existing_user:
         raise HTTPException(
-            status_code=status.HTTP_409_CONFLICT,
+            status_code=409,
             detail="Email already belongs to another user",
         )
 

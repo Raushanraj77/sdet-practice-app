@@ -36,13 +36,13 @@ def get_current_user(
 
         user = db.get(User, int(user_id))
 
-        if user is None:
-            raise credentials_exception
+    except (ValueError, TypeError):
+        raise credentials_exception
 
-        return user
+    if user is None:
+        raise credentials_exception
 
-    except Exception as exc:
-        raise credentials_exception from exc
+    return user
 
 
 def require_admin(
